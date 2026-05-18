@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
+/* Design tokens (Tailwind v4 CSS-first) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #05060a;
+  --foreground: #e9ecff;
+  --muted: #a7acc7;
+  --card: rgba(255, 255, 255, 0.06);
+  --card-border: rgba(255, 255, 255, 0.10);
+
+  --accent-1: #7c3aed; /* violet */
+  --accent-2: #22d3ee; /* cyan */
+  --accent-3: #34d399; /* green */
+  --ring: rgba(124, 58, 237, 0.45);
+}
+
+html.light {
+  --background: #f7f8ff;
+  --foreground: #0b1020;
+  --muted: #4b5563;
+  --card: rgba(10, 16, 32, 0.05);
+  --card-border: rgba(10, 16, 32, 0.10);
+  --ring: rgba(124, 58, 237, 0.35);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+html.light {
+  color-scheme: light;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+::selection {
+  background: rgba(124, 58, 237, 0.35);
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+:where(.no-scrollbar::-webkit-scrollbar) {
+  display: none;
+}
+
+@utility glass {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+@utility glow-ring {
+  box-shadow: 0 0 0 1px var(--ring), 0 0 40px rgba(124, 58, 237, 0.16);
+}
+
+@utility gradient-text {
+  background-image: linear-gradient(90deg, var(--accent-2), var(--accent-1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
