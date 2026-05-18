@@ -41,14 +41,14 @@ export default function LoadingScreen({ label = "Loading" }: { label?: string })
             className="mt-3 text-center text-2xl font-semibold"
             animate={{
               textShadow: [
-                "0 0 0px rgba(124,58,237,0)",
-                "0 0 26px rgba(124,58,237,0.35)",
-                "0 0 0px rgba(124,58,237,0)",
+                "0 0 0px rgba(255,255,255,0)",
+                "0 0 26px rgba(255,255,255,0.16)",
+                "0 0 0px rgba(255,255,255,0)",
               ],
             }}
             transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <span className="gradient-text">NEON PORTFOLIO</span>
+            <span className="gradient-text">PORTFOLIO</span>
           </motion.h1>
 
           <div className="mt-6">

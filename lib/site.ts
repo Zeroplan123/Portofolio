@@ -6,6 +6,7 @@ export const site = {
   location: "Indonesia",
   email: "you@example.com",
   cvUrl: "#",
+  heroImage: "/avatar-placeholder.svg",
   social: {
     github: "https://github.com/your-username",
     linkedin: "https://linkedin.com/in/your-username",
@@ -53,4 +54,3 @@ export const site = {
     },
   ],
 } as const;
-

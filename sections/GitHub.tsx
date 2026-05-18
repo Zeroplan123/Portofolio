@@ -26,10 +26,10 @@ function HeatCell({ count, date }: { count: number; date: string }) {
   const l = level(count);
   const colors = [
     "bg-white/6",
-    "bg-cyan-400/18",
-    "bg-violet-400/22",
-    "bg-emerald-400/22",
-    "bg-cyan-400/30",
+    "bg-white/10",
+    "bg-white/14",
+    "bg-white/18",
+    "bg-white/24",
   ];
   return (
     <div
@@ -78,12 +78,12 @@ function ContributionGraph({
                   l === 0
                     ? "bg-white/6"
                     : l === 1
-                      ? "bg-cyan-400/18"
+                      ? "bg-white/10"
                       : l === 2
-                        ? "bg-violet-400/22"
+                        ? "bg-white/14"
                         : l === 3
-                          ? "bg-emerald-400/22"
-                          : "bg-cyan-400/30",
+                          ? "bg-white/18"
+                          : "bg-white/24",
                 ].join(" ")}
               />
             ))}

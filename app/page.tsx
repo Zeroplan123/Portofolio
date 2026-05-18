@@ -1,10 +1,8 @@
 import Navbar from "@/components/nav/Navbar";
 import About from "@/sections/About";
-import Education from "@/sections/Education";
-import Experience from "@/sections/Experience";
-import Footer from "@/sections/Footer";
 import GitHub from "@/sections/GitHub";
 import Hero from "@/sections/Hero";
+import Projects from "@/sections/Projects";
 
 export default function Home() {
   return (
@@ -13,10 +11,8 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <About />
-        <Experience />
-        <Education />
+        <Projects />
         <GitHub />
-        <Footer />
       </main>
     </div>
   );

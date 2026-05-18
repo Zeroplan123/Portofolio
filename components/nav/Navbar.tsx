@@ -9,11 +9,10 @@ import { cn } from "@/lib/cn";
 import { site } from "@/lib/site";
 
 const items = [
+  { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#education", label: "Education" },
+  { href: "#projects", label: "Projects" },
   { href: "#github", label: "GitHub" },
-  { href: "#contact", label: "Contact" },
 ] as const;
 
 export default function Navbar() {
@@ -38,7 +37,7 @@ export default function Navbar() {
         )}
       >
         <Container className="flex h-16 items-center justify-between">
-          <a href="#" className="group inline-flex items-center gap-2">
+          <a href="#home" className="group inline-flex items-center gap-2">
             <span className="h-2 w-2 rounded-full [background:linear-gradient(90deg,var(--accent-2),var(--accent-1))]" />
             <span className="text-sm font-semibold tracking-tight">
               {site.name}
@@ -111,4 +110,3 @@ export default function Navbar() {
     </header>
   );
 }
-
